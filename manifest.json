@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "KeeBook",
-  "short_name": "KeeBook"
+  "short_name": "KeeBook",
    "description": "Chrome extension for the KeeBook plugin (a plugin for the KeePass password manager)",
    "icons": {
       "128": "icons/128.png",
