@@ -22,7 +22,7 @@ https://github.com/codermarcel/KeeBook-ChromeExtension/releases
 After downloading the extension, unzip the folder on your desktop </br>
 Open Google Chrome, click the wrench icon and go to Settings -> Extensions </br>
 Enable the "Developer Mode" and click the button "Load Extension" and select the unziped folder on your desktop </br>
-You should not see a little blue "E" in the top right corner.
+You should now see a little blue "E" in the top right corner.
 
 #Usage
 
