@@ -8,7 +8,7 @@
       "16": "icons/128.png",
       "48": "icons/128.png"
    },
-  "version": "0.0.1",
+  "version": "0.3.0",
   "browser_action": {
       "default_icon": {
          "19": "icons/128.png",
@@ -24,7 +24,7 @@
     "content_scripts": [
     {
 	  "matches": ["http://*/*", "https://*/*"],
-      "js": ["Base64.js"]
+      "js": ["aes.js", "core.js"]
     }
   ]
 }

@@ -6,11 +6,18 @@ function getTitleAndUrl(callback) {
 
   chrome.tabs.query(queryInfo, function(tabs) {
     var tab = tabs[0];
-	var url = base64_encode(tab.url);
-	var title = base64_encode(tab.title);
-	var icon = base64_encode(tab.favIconUrl)
+
+	//----this is NOT Cryptographically secure! -- please don't take this as an example for your own apps.----
+	var key = CryptoJS.enc.Utf8.parse('7061737323313233');
+    var iv = CryptoJS.enc.Utf8.parse('7061737323313233');
+	var options = { mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7, iv: iv, keySize: 128 / 8,  };
 	
-    callback(url, title, icon);
+    var encrypted_url = encodeURIComponent(CryptoJS.AES.encrypt(tab.url, key, options));
+	var encrypted_title = encodeURIComponent(CryptoJS.AES.encrypt(tab.title, key, options));
+	var encrypted_icon = encodeURIComponent(CryptoJS.AES.encrypt(tab.favIconUrl, key, options));
+	//----this is NOT Cryptographically secure! -- please don't take this as an example for your own apps.----
+
+    callback(encrypted_url, encrypted_title, encrypted_icon);
   });
 }
 
